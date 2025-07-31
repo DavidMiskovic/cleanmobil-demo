@@ -1,0 +1,48 @@
+{
+  "name": "cleanmobil-demo",
+  "version": "1.0.0",
+  "private": true,
+  "dependencies": {
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "react-router-dom": "^6.11.2"
+  },
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build"
+  }
+}
+import React from "react";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import Home from "./components/Home";
+import Booking from "./components/Booking";
+import Reviews from "./components/Reviews";
+
+function App() {
+  return (
+    <Router>
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/buchung" element={<Booking />} />
+        <Route path="/bewertungen" element={<Reviews />} />
+      </Routes>
+    </Router>
+  );
+}
+
+export default App;
+import React from "react";
+
+export default function Booking() {
+  return <h2>Hier kannst du einen Termin buchen.</h2>;
+}
+import React from "react";
+
+export default function Home() {
+  return <h1>Willkommen bei CleanMobil!</h1>;
+}
+import React from "react";
+
+export default function Reviews() {
+  return <h2>Bewertungen unserer Kunden</h2>;
+}
